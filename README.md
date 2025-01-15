@@ -6,7 +6,8 @@
 
 A transport for [winston](https://github.com/winstonjs/winston) which logs to a rotating file. Logs can be rotated based on a date, size limit, and old logs can be removed based on count or elapsed days.
 
-Starting with version 2.0.0, the transport has been refactored to leverage the [file-stream-rotator](https://github.com/rogerc/file-stream-rotator/) module. _Some of the options in the 1.x versions of the transport have changed._ Please review the options below to identify any changes needed.
+This fork of original project uses [@zigasebenik/file-stream-rotator](https://github.com/sebenik/file-stream-rotator) instead of original [file-stream-rotator](https://github.com/rogerc/file-stream-rotator/) module, which fixes [this bug](https://github.com/winstonjs/winston/issues/705)
+_Some of the options in the 1.x versions of the transport have changed._ Please review the options below to identify any changes needed.
 
 ## Compatibility
 Please note that if you are using `winston@2`, you will need to use `winston-daily-rotate-file@3`. `winston-daily-rotate-file@4` removed support for `winston@2`.
@@ -17,7 +18,7 @@ This library should work starting with Node.js 8.x, but tests are only executed 
 
 ## Install
 ```
-npm install winston-daily-rotate-file
+npm install @zigasebenik/winston-daily-rotate-file
 ```
 
 ## Options
@@ -43,7 +44,7 @@ The DailyRotateFile transport can rotate files by minute, hour, day, month, year
 ## Usage
 ``` js
   var winston = require('winston');
-  require('winston-daily-rotate-file');
+  require('@zigasebenik/winston-daily-rotate-file');
 
   var transport = new winston.transports.DailyRotateFile({
     level: 'info',
@@ -74,7 +75,7 @@ The DailyRotateFile transport can rotate files by minute, hour, day, month, year
 using multiple transports
 ``` js
   var winston = require('winston');
-  require('winston-daily-rotate-file');
+  require('@zigasebenik/winston-daily-rotate-file');
 
   var transport1 = new winston.transports.DailyRotateFile({
     filename: 'application-%DATE%.log',
@@ -126,7 +127,7 @@ using multiple transports
 
 ``` js
 import  *  as  winston  from  'winston';
-import  'winston-daily-rotate-file';
+import  '@zigasebenik/winston-daily-rotate-file';
 
 
 const transport = new winston.transports.DailyRotateFile({
@@ -159,7 +160,7 @@ logger.info('Hello World!');
 ``` typescript
 
 import * as winston from 'winston';
-import DailyRotateFile from 'winston-daily-rotate-file';
+import DailyRotateFile from '@zigasebenik/winston-daily-rotate-file';
 
 const transport: DailyRotateFile = new DailyRotateFile({
     filename: 'application-%DATE%.log',
@@ -201,6 +202,7 @@ MIT
 
 ##### AUTHOR: [Charlie Robbins](https://github.com/indexzero)
 ##### MAINTAINER: [Matt Berther](https://github.com/mattberther)
+##### FORK_AUTHOR: [Žiga Šebenik](https://github.com/sebenik)
 
 [npm-image]: https://badge.fury.io/js/winston-daily-rotate-file.svg
 [npm-url]: https://npmjs.org/package/winston-daily-rotate-file

@@ -78,7 +78,7 @@ const DailyRotateFile = function(options) {
             throw new Error("Your path or filename contain an invalid character.");
         }
 
-        this.logStream = require("file-stream-rotator").getStream({
+        this.logStream = require("@zigasebenik/file-stream-rotator").getStream({
             filename: path.join(this.dirname, this.filename),
             frequency: options.frequency ? options.frequency : "custom",
             date_format: options.datePattern ? options.datePattern : "YYYY-MM-DD",
