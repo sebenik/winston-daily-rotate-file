@@ -1,6 +1,6 @@
 {
   "name": "@zigasebenik/winston-daily-rotate-file",
-  "version": "5.0.1",
+  "version": "5.0.2",
   "description": "A transport for winston which logs to a rotating file each day.",
   "main": "index.js",
   "types": "index.d.ts",
@@ -46,7 +46,7 @@
     "threads": "^1.7.0"
   },
   "dependencies": {
-    "@zigasebenik/file-stream-rotator": "^0.6.3",
+    "@zigasebenik/file-stream-rotator": "^0.6.4",
     "object-hash": "^3.0.0",
     "triple-beam": "^1.4.1",
     "winston-transport": "^4.7.0"
