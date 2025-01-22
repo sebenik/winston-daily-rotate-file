@@ -106,6 +106,10 @@ const DailyRotateFile = function(options) {
             this.emit("rotate", oldFile, newFile);
         });
 
+        this.logStream.on("error", (error) => {
+            this.emit("error", error);
+        });
+
         this.logStream.on("logRemoved", (params) => {
             if (options.zippedArchive) {
                 const gzName = params.name + ".gz";
